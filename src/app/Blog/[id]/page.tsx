@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-
+import Link from "next/link";
 type Props = {
     params:{
         id:string
@@ -23,7 +23,9 @@ export async function generateMetadata({params : {id}} :Props): Promise<Metadata
     
         return (
             <>
-            <h1>{post.title}</h1>
+            <Link href={`/Blog`}> Back to Blog</Link>
+            <h1>This is User num {post.id}</h1>
+            <h3>{post.title}</h3>
             <p>{post.body}</p>
             </>
         )

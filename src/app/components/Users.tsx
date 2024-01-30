@@ -2,6 +2,7 @@
 
 import { gettingPosts } from "@/services/getFetch"
 import { useUser } from "@/store"
+import Link from "next/link"
 import { useEffect } from "react"
 import { shallow } from "zustand/shallow"
 
@@ -14,12 +15,12 @@ export const Users = () => {
     }, [gettingPosts])
 
     return ( loading ? 
-        <h2>Loading.!!</h2>
+        <h2>Loading!!</h2>
         :
         <ul>
             {users.map((user:any)=>(
                 <li key={user.id}>
-                    <h3>{user.name} </h3>
+                    <Link href={`/Blog/${user.id}`}>{user.name}</Link>
                 </li>
             ))}
         </ul>
