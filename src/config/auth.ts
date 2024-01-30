@@ -16,8 +16,8 @@ export const authConfig : AuthOptions = {
          }),
          Credentials ({
             credentials:{
-                email:{label : 'email',type:'email',required : true},
-                password:{label : 'password',type:'password',required : true}
+                email:{label : 'Email',type:'email',required : true},
+                password:{label : 'Password',type:'password',required : true}
 
             },
             async authorize(credentials) {
@@ -25,8 +25,9 @@ export const authConfig : AuthOptions = {
 
 
                 const currentUsers = users.find(user => user.email === credentials.email)
+                const currenPass = users.find(user => user.password === credentials.password)
 
-                if(currentUsers && currentUsers.password === credentials.password) {
+                if(currentUsers && currenPass) {
                     const {password, ... userWithoutPassword} = currentUsers;
                     return userWithoutPassword as User
                 }
@@ -34,5 +35,8 @@ export const authConfig : AuthOptions = {
                 return null 
             }
          })
-    ]
+    ], 
+    pages: {
+        signIn:'/signin'
+    }
 }

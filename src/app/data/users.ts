@@ -3,7 +3,7 @@ export const users = [
       "id": 1,
       "name": "Leanne Graham",
       "username": "Bret",
-      "email": "Sincere@april.biz",
+      "email": "shakhbazyann@gmail.com",
       "password" : "123",
       "address": {
         "street": "Kulas Light",

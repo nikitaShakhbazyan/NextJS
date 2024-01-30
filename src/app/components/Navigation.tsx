@@ -33,7 +33,7 @@ export const Navigation = ({navLinks}: Props) => {
         <Link href='/Profile'>Profile</Link>
     )}
     {session?.data ? ( <Link href="#" onClick={() => signOut({callbackUrl:'/'}) }> Sign Out</Link>) : 
-   ( <Link href='api/auth/signin'> Sign In</Link> )}
+   ( <Link href='/signin'> Sign In</Link> )}
     </>
   )
 }
